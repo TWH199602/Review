@@ -3,6 +3,8 @@ package Socket;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.InetAddress;
+
 
 public class UdpServer {
 
@@ -11,18 +13,20 @@ public class UdpServer {
     byte[] bytes = new byte[1024];
     while (true){
       DatagramPacket dp = new DatagramPacket(bytes, bytes.length);
-      System.out.println("Before received");
-      System.out.println(dp.getAddress());
-      System.out.println(dp.getPort());
+      System.out.println("Ready to receive:");
       ds.receive(dp);
-      System.out.println("After received");
       byte[] data = dp.getData();
-      System.out.println(data == bytes);
-      System.out.println(new String(data,0, dp.getLength()));
-      System.out.println(dp.getAddress().getHostAddress());
-      System.out.println(dp.getPort());
+      String received = new String(data, 0 , dp.getLength());
+      if("fart".equals(received)){
+        System.out.println("停止接收");
+        break;
+      }
+
+      System.out.println("After received");
+      System.out.println(received);
+
     }
 
-    // ds.close();
+     ds.close();
   }
 }
