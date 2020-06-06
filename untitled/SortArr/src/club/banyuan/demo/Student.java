@@ -25,7 +25,7 @@ public class Student {
   private static void delete(String[] student) {
 //想把B删除掉
     int index = -1;
-//1.先找到苹果所在的下标位置
+//1.先找到A所在的下标位置
     for (int i = 0; i < student.length; i++) {
 //先做非空判断，然后再去比较，这样可提高代码的健壮性，避免NullPointException空指针异常
       if(student[i]!=null&&!student[i].equals("") ){
