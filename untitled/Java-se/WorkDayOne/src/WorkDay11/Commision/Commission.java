@@ -28,21 +28,10 @@ public class Commission extends Hourly {
         this.commissionRate = commissionRate;
     }
 
-    public double getTotalSales() {
-        return totalSales;
-    }
-
     public void addSales(double totalSales) {
-        this.totalSales  = totalSales;
+        this.totalSales  += totalSales;
     }
 
-    public double getCommissionRate() {
-        return commissionRate;
-    }
-
-    public void setCommissionRate(double commissionRate) {
-        this.commissionRate = commissionRate;
-    }
     @Override
     public double pay() {
         double payment = super.pay() + totalSales * commissionRate;

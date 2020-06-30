@@ -21,6 +21,7 @@ public class Staff {
         staffList[5] = new Volunteer("小明", "栖霞", "13999999999");
         staffList[6] = new Commission("印度阿三","印度","13799999999","121-77-8789",6.25,0.2);
         staffList[7] = new Commission("越南猴子","越南","1315555555","110-00-3859",9.75,0.15);
+       //向上的数据类型转换；
         ((Executive) staffList[0]).awardBonus(500.00);
         ((Hourly) staffList[3]).addHours(40);
         ((Commission) staffList[6]).addSales(400);
