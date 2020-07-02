@@ -161,14 +161,17 @@ public class Calculator {
         } catch (CalculatorException e) {
             // 这捕获了剩下的CalculatorException情况：DivideByZeroException
             // TODO: complete implementation.
-            if (e instanceof DivideByZeroException){
-                System.out.println("Tried to divide by zero");
+            /**
+             *  if (e instanceof DivideByZeroException){
+             *                 System.out.println("Tried to divide by zero");
+             *
+             *             }
+             *             finally{
+             *                 if (tokens.length > 0 && !"quit".equalsIgnoreCase(tokens[0])) {
+             *                     System.out.println("Input was:" + input);
+             *                 }
+             */
 
-            }
-            finally{
-                if (tokens.length > 0 && !"quit".equalsIgnoreCase(tokens[0])) {
-                    System.out.println("Input was:" + input);
-                }
             }
             return false;
         }
@@ -177,8 +180,8 @@ public class Calculator {
         // TODO: complete implementation.
 
         // 未指定退出
-        return false;
-    }
+//        return false;
+//    }
 
     public static int parseInt(String s) {
         try {
