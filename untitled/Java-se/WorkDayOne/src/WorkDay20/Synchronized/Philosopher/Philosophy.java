@@ -45,6 +45,8 @@ public class Philosophy implements Callable<String> {
         }
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
+        this.left.put(this);
+        this.right.put(this);
       }
     }
 
